@@ -1,0 +1,65 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "br.com.wellingtoncosta.bookhub"
+        minSdkVersion 16
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // Android Support
+    implementation "com.android.support:appcompat-v7:$versions.android.support"
+    implementation "com.android.support:design:$versions.android.support"
+    implementation "com.android.support:recyclerview-v7:$versions.android.support"
+    implementation "com.android.support:support-v4:$versions.android.support"
+    implementation "com.android.support.constraint:constraint-layout:$versions.android.constraintlayout"
+
+    // Android Databinding
+    kapt "com.android.databinding:compiler:$versions.android.databinding"
+
+    // Android LiveData and ViewModel
+    implementation "android.arch.lifecycle:extensions:$versions.android.arch"
+    implementation 'com.github.WellingtonCosta:viewmodel-dagger:1.0'
+
+    // Convalida
+    implementation "com.github.WellingtonCosta.convalida:convalida:$versions.convalida"
+    kapt "com.github.WellingtonCosta.convalida:convalida-compiler:$versions.convalida"
+
+    // Koin
+    implementation "org.koin:koin-android:$versions.koin"
+    implementation "org.koin:koin-android-viewmodel:$versions.koin"
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin"
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+    // RxJava and RxAndroid
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+
+    // Tests
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
