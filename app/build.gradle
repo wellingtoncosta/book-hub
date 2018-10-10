@@ -27,17 +27,17 @@ android {
 
 dependencies {
     // Android Support
-    implementation "com.android.support:appcompat-v7:$versions.android.support"
-    implementation "com.android.support:design:$versions.android.support"
-    implementation "com.android.support:recyclerview-v7:$versions.android.support"
-    implementation "com.android.support:support-v4:$versions.android.support"
-    implementation "com.android.support.constraint:constraint-layout:$versions.android.constraintlayout"
+    implementation "androidx.appcompat:appcompat:$versions.androidx.core"
+    implementation "androidx.constraintlayout:constraintlayout:$versions.androidx.constraintlayout"
+    implementation "androidx.core:core-ktx:$versions.androidx.core"
+    implementation "androidx.legacy:legacy-support-v4:$versions.androidx.core"
+    implementation "androidx.recyclerview:recyclerview:$versions.androidx.core"
 
     // Android Databinding
-    kapt "com.android.databinding:compiler:$versions.android.databinding"
+    kapt "androidx.databinding:databinding-compiler:$versions.androidx.databinding"
 
     // Android LiveData and ViewModel
-    implementation "android.arch.lifecycle:extensions:$versions.android.arch"
+    implementation "androidx.lifecycle:lifecycle-extensions:$versions.androidx.lifecycle"
     implementation 'com.github.WellingtonCosta:viewmodel-dagger:1.0'
 
     // Convalida
@@ -55,6 +55,11 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$versions.retrofit"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit"
     implementation "com.squareup.retrofit2:converter-gson:$versions.retrofit"
+
+    // Room Persistence Library
+    implementation "android.arch.persistence.room:runtime:$versions.room"
+    implementation "android.arch.persistence.room:rxjava2:$versions.room"
+    kapt "android.arch.persistence.room:compiler:$versions.room"
 
     // RxJava and RxAndroid
     implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
