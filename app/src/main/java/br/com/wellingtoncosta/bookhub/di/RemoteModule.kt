@@ -15,6 +15,7 @@ import java.util.concurrent.TimeUnit
 /**
  * @author Wellington Costa on 09/10/18.
  */
+
 private const val CONNECTION_TIMEOUT = 30000
 
 val remoteModule = module {

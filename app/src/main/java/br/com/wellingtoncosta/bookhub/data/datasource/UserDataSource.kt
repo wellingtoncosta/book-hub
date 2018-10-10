@@ -14,10 +14,11 @@ interface UserDataSource {
 
     interface Local {
 
-        fun saveToken(token: String): Observable<Unit>
+        fun save(user: User): Observable<Long>
 
-        fun getToken(): Maybe<String>
+        fun getById(userId: Long): Maybe<User>
 
+        fun delete(userId: Long): Observable<Unit>
     }
 
     interface Remote {

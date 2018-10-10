@@ -7,7 +7,8 @@ import org.koin.dsl.module.module
 /**
  * @author Wellington Costa on 09/10/18.
  */
+
 val repositoryModule = module {
-    single { UserDataRepository(get(), get()) }
+    single { UserDataRepository(get(), get(), get()) }
     single { BookDataRepository(get(), get()) }
 }

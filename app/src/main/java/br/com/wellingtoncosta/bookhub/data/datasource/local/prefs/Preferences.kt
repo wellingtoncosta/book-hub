@@ -15,6 +15,8 @@ class Preferences(private val context: Context) {
 
     fun get(key: String) = prefs.getString(key, null) ?: ""
 
+    fun remove(key: String) = prefs.edit().remove(key).apply()
+
     companion object {
         const val PREFS_NAME = "book-hub-prefs"
     }
